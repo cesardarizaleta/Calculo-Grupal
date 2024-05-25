@@ -3,9 +3,9 @@ Proyectos de Calculo Numerico Grupal
 
 **Integrantes**  
 
->Cesar Dominguez
->José Santana  
->Alejandro Chávez
+- Cesar Dominguez  
+- José Santana  
+- Alejandro Chávez
 
 ---
 
