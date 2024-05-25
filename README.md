@@ -1,5 +1,5 @@
 # Calculo Numerico
-###Proyectos de Calculo Numerico Grupal
+Proyectos de Calculo Numerico Grupal
 ---
 
 #### **Indice**
