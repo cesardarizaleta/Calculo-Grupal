@@ -1,7 +1,7 @@
 # Calculo Numerico
 Proyectos de Calculo Numerico Grupal  
 
-  <img width="100%" src="https://giphy.com/gifs/creative-coding-libcinder-100days-xThuWd5Go1F2qDsg1O">
+<!--Agregar Gif o Foto-->
 
 ---
 
