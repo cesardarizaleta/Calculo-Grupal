@@ -15,6 +15,10 @@ Proyectos de Calculo Numerico Grupal
 ---
 
 ####   Indice
-Seleccione para dirigirse a la evaluacion  
+Seleccione para dirigirse 
 
-[Primera Evaluacion](Proyectos/evaluacion.ipynb)
+Evaluaciones 📝  
+
+Asignaciones 📖
+- [Documentacion Julia](Asignaciones/asignacion-julia.ipynb)  
+- [Graficas Gauss-Seidel](Asignaciones/gauss-seidel-grafica)
