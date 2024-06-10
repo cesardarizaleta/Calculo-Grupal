@@ -18,6 +18,7 @@ Proyectos de Calculo Numerico Grupal
 Seleccione para dirigirse 
 
 Evaluaciones 📝  
+- [Interpolaciones](Proyectos/PrediccionMeteorologica/interpolaciones.ipynb)
 
 Asignaciones 📖
 - [Documentacion Julia](Asignaciones/asignacion-julia.ipynb)  
