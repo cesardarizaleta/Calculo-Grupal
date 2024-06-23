@@ -24,9 +24,10 @@ def derivar(n,expresion,x=sy.symbols("x")):
 def rodrigues(n):
     x = sy.symbols('x')
     #Revisar - Arreglar
-    rodri = 1/(2**n * math.factorial(n)) * derivar(n,(x**2 - 1)**n)
+    rodri = (1/((2**n) * math.factorial(n))) * derivar(n,(x**2 - 1)**n)
     print(rodri)
+    
 
-print(sy.evaluate(rodrigues(3)))
+rodrigues(2)
 #explicita(3)
     
