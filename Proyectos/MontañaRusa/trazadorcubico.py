@@ -30,8 +30,8 @@ def traza_cubico_(xi,yi):
         Seg[j] = 3*(pend21 - pend10)
     
     Prim[tam-1,tam-2] = h[tam - 2]
-    Prim[tam - 1, tam - 1] = 2*h[tam - 2]
-    Seg[tam - 1] = 3*(yi[tam - 1] - yi[tam - 2])/h[tam - 2]
+    Prim[tam - 1, tam - 1] = 2*h[tam - 2] #Condicion de forntera Sujeta
+    Seg[tam - 1] = 3*(yi[tam - 1] - yi[tam - 2])/h[tam - 2] # Condicion de forntera Sujeta
 
     #Resolucion del sistema de ecuaciones
 
@@ -53,6 +53,36 @@ def traza_cubico_(xi,yi):
         c[i] = pend10 - (2*h[i]*result[i] + h[i]*result[i + 1])/6
         d[i] = yi[i]
     
+    #Tabla de los valores del polinomio
+
+    X = sym.symbols("x")
+    tabla = []
+    for i in range(0,tam-1):
+        poli = a[i] * (X-xi[i])**3 + b[i] * (X-xi[i])**2
+        poli = poli + c[i] * (X-xi[i]) + d[i]
+        poli = poli.expand()
+        tabla.append(poli)
+    return tabla
+
+#Funcion que grafica el trazador cubico con frontera sujeta
+def Grafica_Cubico(xi,yi,tabla,muestra):
+    n = len(xi)
+    trazaX = np.array([])
+    trazaY = np.array([])
+    tramo = 1
+    while tramo < n:
+        a = xi[tramo -1]
+        b = xi[tramo]
+        tramX = np.linspace(a,b,muestra)
+        #Evalacion del polinimo en el tramo
+
+        evaTramo = tabla[tramo - 1]
+        evaxt = sym.lambdify("x",evaTramo)
+        tramY = evaxt(tramX)
+    
+        #Vectores para el trazado en x, y
+        
+
 
 #Extrayendo datos de api
 x,y = api.datos1()
