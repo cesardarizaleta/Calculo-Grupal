@@ -16,15 +16,22 @@ headers = {
 #Nos retorna un vector con todos los elementos
 #Con un ciclo podemos recoger todos los elementos
 
-def derivar(n,expresion):
+def derivar(n,expresion,x=sy.symbols("x")):
     for i in range(0,n):
-        expresion = sy.diff(expresion)
+        expresion = sy.diff(expresion,x)
     return expresion
+
+def combinatoria(m,n):
+    return (math.factorial(m))/(math.factorial(n)*math.factorial(m-n))
 
 def rodrigues(n):
     x = sy.symbols('x')
-    rodri = 1/math.factorial(n) * derivar(n,(x**2 - 1)**n)
+    #Revisar - Arreglar
+    rodri = 1/(2**n * math.factorial(n)) * derivar(n,(x**2 - 1)**n)
     print(rodri)
+    
+def explicita(n):
+    
 
 rodrigues(3)
     
