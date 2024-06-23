@@ -1,33 +1,27 @@
-import requests
 import numpy as np 
 import math
 import sympy as sy
-
-#url = "https://mountain-api1.p.rapidapi.com/api/mountains"
-
-
-headers = {
-	"x-rapidapi-key": "b3c1599eeamsh15f5406714c8819p11548bjsn28eb8925c3bc",
-	"x-rapidapi-host": "mountain-api1.p.rapidapi.com"
-}
-
-#response = requests.get(url, headers=headers)
-
-#Nos retorna un vector con todos los elementos
-#Con un ciclo podemos recoger todos los elementos
+import matplotlib.pyplot as plt
 
 def derivar(n,expresion,x=sy.symbols("x")):
     for i in range(0,n):
         expresion = sy.diff(expresion,x)
     return expresion
 
-def rodrigues(n):
+def rodrigues(n,xi):
     x = sy.symbols('x')
-    #Revisar - Arreglar
     rodri = (1/((2**n) * math.factorial(n))) * derivar(n,(x**2 - 1)**n)
-    print(rodri)
+    return rodri.evalf(subs={x: xi})
     
 
-rodrigues(2)
-#explicita(3)
+x = np.linspace(-1, 1, 400)
+n = 5  # orden del polinomio
+
+y = [rodrigues(n,xi) for xi in x]
+
+plt.plot(x, y)
+plt.title(f"Polinomio de Legendre de orden {n}")
+plt.xlabel("x")
+plt.ylabel("Pn(x)")
+plt.show()
     
