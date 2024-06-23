@@ -31,7 +31,12 @@ def rodrigues(n):
     print(rodri)
     
 def explicita(n):
-    
+    resultado = 0
+    x = sy.symbols("x")
+    for k in range(0,n+1):
+        resultado += (combinatoria(n,k) ** 2) * ((x + 1) ** (n-k)) * (x-1)**k
+    print(1/(2**n)*resultado)
 
-rodrigues(3)
+#rodrigues(3)
+explicita(3)
     
