@@ -8,13 +8,13 @@ import matplotlib.pyplot as plt
 def traza_cubico_(xi,yi):
     tam = len(xi)
     h = np.zeros(tam-1,dtype=float) #Valores para h
-    for i in range(0,tam,1):
+    for i in range(0,tam-1,1):
         h[i] = xi[i + 1] - xi[i]
     #Sistema de ecuaciones
 
     Prim = np.zeros(shape =(tam,tam), dtype=float)
-    Seg = np.array(tam, dtype= float)
-    result = np.array(tam,dtype= float)
+    Seg = np.zeros(tam, dtype= float)
+    result = np.zeros(tam,dtype= float)
 
     Prim[0,0] = 2*h[0]
     Prim[0,1] = h[0]
@@ -81,7 +81,18 @@ def Grafica_Cubico(xi,yi,tabla,muestra):
         tramY = evaxt(tramX)
     
         #Vectores para el trazado en x, y
-        
+
+        trazaX = np.concatenate((trazaX,tramX))
+        trazaY = np.concatenate((trazaY,tramY))
+        tramo += 1
+    
+    #Grafica del polinomio
+    plt.plot(xi,yi, "o", label="Puntos")
+    plt.plot(trazaX,trazaY, label= "Trazador", color="Green")
+    plt.title("Trazador Cúbico con Frontera Sujeta")
+    plt.xlabel("xi")
+    plt.ylabel("p[xi]")
+    plt.show()
 
 
 #Extrayendo datos de api
@@ -93,6 +104,6 @@ for i in range(len(x)): x[i] = float(x[i])
 y = y.strip('][').split(',')
 for i in range(len(x)): y[i] = float(y[i])
 
-#Imprimiendo datos a usar
-print(x)
-print(y)
+tabla = traza_cubico_(x,y)
+muestra = 100
+Grafica_Cubico(x,y,tabla,muestra)
