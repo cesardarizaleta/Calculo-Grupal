@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def route():
-    return "API"
+    return "API ejecutada correctamente"
 
 @app.route("/datos1")
 def get_datos1():
