@@ -2,6 +2,7 @@ import numpy as np
 import math
 import sympy as sy
 import matplotlib.pyplot as plt
+import api
 
 #Metodo para derivar enesimamente
 def derivar(n,expresion,x=sy.symbols("x")):
@@ -16,17 +17,22 @@ def rodrigues(n,xi):
     #Evalf evalua la funcion de rodri
     return rodri.evalf(subs={x: xi})
     
-#-1 y 1 Son los intervalos, en el caso de la M.R hay que pasarle los puntos de control
-x = np.linspace(-1, 1, 400)
-n = 5  # orden del polinomio
+x, y = api.datos1()
 
-#Evaluar rodrigues en cada punto del intervalo
-y = [rodrigues(n,xi) for xi in x]
+x = x.strip('][').split(',')
+for i in range(len(x)): x[i] = float(x[i])
 
-#Graficar
-plt.plot(x, y)
-plt.title(f"Polinomio de Legendre de orden {n}")
-plt.xlabel("x")
-plt.ylabel("Pn(x)")
+y = y.strip('][').split(',')
+for i in range(len(y)): y[i] = float(y[i])
+
+print(x)
+print(y)
+
+n = 3
+
+# Evaluar rodrigues en cada punto del intervalo
+y_intervalo = [rodrigues(n, xi) for xi in x]
+
+# Graficar
+plt.plot(x, y_intervalo)
 plt.show()
-    
