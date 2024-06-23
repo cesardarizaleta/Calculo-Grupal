@@ -29,6 +29,29 @@ def traza_cubico_(xi,yi):
         pend10 = (yi[j] - yi[j - 1])/ h[j-1]
         Seg[j] = 3*(pend21 - pend10)
     
+    Prim[tam-1,tam-2] = h[tam - 2]
+    Prim[tam - 1, tam - 1] = 2*h[tam - 2]
+    Seg[tam - 1] = 3*(yi[tam - 1] - yi[tam - 2])/h[tam - 2]
+
+    #Resolucion del sistema de ecuaciones
+
+    resolvi = np.linalg.solve(Prim,Seg)
+    for k in range(0,tam,1):
+        result[k] = resolvi[k]
+
+    #Calculo de los coeficientes
+
+    a = np.zeros(tam - 1,dtype=float)
+    b = np.zeros(tam - 1,dtype= float)
+    c = np.zeros(tam - 1, dtype= float)
+    d = np.zeros(tam - 1,dtype=float)
+
+    for i in range(0,tam-1):
+        a[i] = (result[i + 1] - result[i])/(6*h[i])
+        b[i] = result[i] / 2
+        pend10 = (yi[i + 1] - yi[i])/ h[i]
+        c[i] = pend10 - (2*h[i]*result[i] + h[i]*result[i + 1])/6
+        d[i] = yi[i]
     
 
 #Extrayendo datos de api
