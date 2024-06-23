@@ -21,22 +21,12 @@ def derivar(n,expresion,x=sy.symbols("x")):
         expresion = sy.diff(expresion,x)
     return expresion
 
-def combinatoria(m,n):
-    return (math.factorial(m))/(math.factorial(n)*math.factorial(m-n))
-
 def rodrigues(n):
     x = sy.symbols('x')
     #Revisar - Arreglar
     rodri = 1/(2**n * math.factorial(n)) * derivar(n,(x**2 - 1)**n)
     print(rodri)
-    
-def explicita(n):
-    resultado = 0
-    x = sy.symbols("x")
-    for k in range(0,n+1):
-        resultado += (combinatoria(n,k) ** 2) * ((x + 1) ** (n-k)) * (x-1)**k
-    print(1/(2**n)*resultado)
 
-#rodrigues(3)
-explicita(3)
+print(sy.evaluate(rodrigues(3)))
+#explicita(3)
     
