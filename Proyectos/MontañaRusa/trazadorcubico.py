@@ -22,7 +22,14 @@ def traza_cubico_(xi,yi):
 
     #Primera derivadas
     for j in range(0,tam-1,1):
-        
+        Prim[j,j-1] = h[j-1]
+        Prim[j,j] = 2*(h[j-1] + h[j])
+        Prim[j, j + 1] = h[j]
+        pend21 = (yi[j + 1] - yi[j])/h[j]
+        pend10 = (yi[j] - yi[j - 1])/ h[j-1]
+        Seg[j] = 3*(pend21 - pend10)
+    
+    
 
 #Extrayendo datos de api
 x,y = api.datos1()
