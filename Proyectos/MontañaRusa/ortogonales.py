@@ -11,4 +11,5 @@ headers = {
 response = requests.get(url, headers=headers)
 
 #Nos retorna un vector con todos los elementos
+#Con un ciclo podemos recoger todos los elementos
 print(response.json()[2]['altitude'])
