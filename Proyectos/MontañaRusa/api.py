@@ -9,12 +9,12 @@ def route():
 
 @app.route("/datos1")
 def get_datos1():
-    diccionario = {'x_data':'[0, 1, 2, 3, 4, 5]','y_data':'[0.5, 0.8, 1.0, 0.9, 1.2, 0.7]'}
+    diccionario = {'x_data':'[0,1,2,3,4,5]','y_data':'[0.5,0.8,1.0,0.9,1.2,0.7]'}
     return jsonify(diccionario)
 
 @app.route("/datos2")
 def get_datos2():
-    diccionario = {'x_data':'[0, 1, 2, 3, 4]','y_data':'[1.1, 3.5, 2.8, 4.2, 5.0]'}
+    diccionario = {'x_data':'[0,1,2,3,4]','y_data':'[1.1,3.5,2.8,4.2,5.0]'}
     return jsonify(diccionario)
 
 @app.route("/datos4")
