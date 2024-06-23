@@ -1,9 +1,9 @@
 import requests
 import numpy as np 
-import scipy as sp
-import sympy 
+import math
+import sympy as sy
 
-url = "https://mountain-api1.p.rapidapi.com/api/mountains"
+#url = "https://mountain-api1.p.rapidapi.com/api/mountains"
 
 
 headers = {
@@ -16,5 +16,15 @@ headers = {
 #Nos retorna un vector con todos los elementos
 #Con un ciclo podemos recoger todos los elementos
 
-def rodrigues(x,n):
+def derivar(n,expresion):
+    for i in range(0,n):
+        expresion = sy.diff(expresion)
+    return expresion
+
+def rodrigues(n):
+    x = sy.symbols('x')
+    rodri = 1/math.factorial(n) * derivar(n,(x**2 - 1)**n)
+    print(rodri)
+
+rodrigues(3)
     
