@@ -1,4 +1,7 @@
 import requests
+import numpy as np 
+import scipy as sp
+import sympy 
 
 url = "https://mountain-api1.p.rapidapi.com/api/mountains"
 
@@ -8,11 +11,10 @@ headers = {
 	"x-rapidapi-host": "mountain-api1.p.rapidapi.com"
 }
 
-response = requests.get(url, headers=headers)
+#response = requests.get(url, headers=headers)
 
 #Nos retorna un vector con todos los elementos
 #Con un ciclo podemos recoger todos los elementos
-#print(response.json()[2]['altitude'])
 
-def legendre():
-    pass
+def rodrigues(x,n):
+    
