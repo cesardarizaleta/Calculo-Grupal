@@ -88,7 +88,7 @@ def Grafica_Cubico(xi,yi,tabla,muestra):
     
     #Grafica del polinomio
     plt.plot(xi,yi, "o", label="Puntos")
-    plt.plot(trazaX,trazaY, label= "Trazador", color="Green")
+    plt.plot(trazaX,trazaY, label= "Trazador", color="Blue")
     plt.title("Trazador Cúbico con Frontera Sujeta")
     plt.xlabel("xi")
     plt.ylabel("p[xi]")
