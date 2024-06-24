@@ -16,11 +16,6 @@ def rodrigues(n,xi):
     rodri = (1/((2**n) * math.factorial(n))) * derivar(n,(x**2 - 1)**n)
     #Evalf evalua la funcion de rodri
     return rodri.evalf(subs={x: xi})
-
-def hermite(n,xi):
-    x = sy.symbols('x')
-    her = ((-1)**n) * (math.e ** ((x) **2)) * derivar(n,(math.e)**(-(x**2)))
-    return her.evalf(subs={x: xi})
     
 x, y = api.datos1()
 
@@ -30,21 +25,12 @@ for i in range(len(x)): x[i] = float(x[i])
 y = y.strip('][').split(',')
 for i in range(len(y)): y[i] = float(y[i])
 
-n = 2  # orden del polinomio
+n = 5  # orden del polinomio
 
 #Polinomio Rodrigues
-x = np.linspace(-1,1, 100)
-y = [rodrigues(n,xi) for xi in x]
-plt.plot(x,y)
-
-#Polinomio de Hermite
-x = np.linspace(0,10, 100)
-y = [hermite(n,xi) for xi in x]
-#plt.plot(x,y)
-
-#Evaluar rodrigues en cada punto del intervalo
+#Dominio de Lagendre es [-1,1]
+#x = np.linspace(-1,1, 100)
 #y = [rodrigues(n,xi) for xi in x]
 
-# Graficar
-
+plt.plot(x,y)
 plt.show()
