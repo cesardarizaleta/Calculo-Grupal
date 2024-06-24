@@ -25,18 +25,12 @@ for i in range(len(x)): x[i] = float(x[i])
 y = y.strip('][').split(',')
 for i in range(len(y)): y[i] = float(y[i])
 
-#-1 y 1 Son los intervalos, en el caso de la M.R hay que pasarle los puntos de control
-#x = np.linspace(x[0], x[1], 400)
 n = 5  # orden del polinomio
-plt.plot(x,y, marker="o")
-inter = np.linspace(0,1, 100)
-y = [rodrigues(n,xi) for xi in x]
-#plt.plot(x,y)
 
-for i in range(0,len(x)-1):
-    inter = np.linspace(x[i], x[i+1], 100)
-    y = [rodrigues(n,xi) for xi in x]
-    #plt.plot(x,y)
+#Polinomio Rodrigues
+x = np.linspace(-1,1, 100)
+y = [rodrigues(n,xi) for xi in x]
+plt.plot(x,y)
 
 #Evaluar rodrigues en cada punto del intervalo
 #y = [rodrigues(n,xi) for xi in x]
