@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def calculo_coeficiente(xi,yi):
     coef = np.polyfit(xi,yi,3)
     return coef
-#Funcion que arregla que evalua el polinomio y devuelve los valores previstos
+#Funcion que evalua el polinomio y devuelve los valores previstos
 def evaluacion_polinomio(poli,xi):
     eval = np.polyval(poli,xi)
     return eval
