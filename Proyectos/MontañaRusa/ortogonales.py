@@ -16,6 +16,12 @@ def rodrigues(n,xi):
     rodri = (1/((2**n) * math.factorial(n))) * derivar(n,(x**2 - 1)**n)
     #Evalf evalua la funcion de rodri
     return rodri.evalf(subs={x: xi})
+
+def hermite(n):
+    x = sy.symbols('x')
+    h = ((-1)**n)*(math.e**((x**2)/2))*derivar(n,(math.e**((-(x**2))/2)))
+    return h
+    pass
     
 x, y = api.datos1()
 
@@ -32,5 +38,7 @@ n = 5  # orden del polinomio
 #x = np.linspace(-1,1, 100)
 #y = [rodrigues(n,xi) for xi in x]
 
-plt.plot(x,y)
-plt.show()
+print(hermite(0))
+
+#plt.plot(x,y)
+#plt.show()
