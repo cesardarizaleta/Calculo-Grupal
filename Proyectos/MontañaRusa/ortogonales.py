@@ -33,14 +33,14 @@ for i in range(len(y)): y[i] = float(y[i])
 n = 2  # orden del polinomio
 
 #Polinomio Rodrigues
-#x = np.linspace(-1,1, 100)
-#y = [rodrigues(n,xi) for xi in x]
-#plt.plot(x,y)
+x = np.linspace(-1,1, 100)
+y = [rodrigues(n,xi) for xi in x]
+plt.plot(x,y)
 
 #Polinomio de Hermite
 x = np.linspace(0,10, 100)
 y = [hermite(n,xi) for xi in x]
-plt.plot(x,y)
+#plt.plot(x,y)
 
 #Evaluar rodrigues en cada punto del intervalo
 #y = [rodrigues(n,xi) for xi in x]
