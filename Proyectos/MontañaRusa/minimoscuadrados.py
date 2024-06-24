@@ -1,6 +1,11 @@
 import api
-#SI NO FUNCIONA CORRE EL ARCHIVO DE API PRIMERO
-#Extrayendo datos de api
+import numpy as np
+import sympy as sym
+import matplotlib.pyplot as plt
+#Funcion que calcula los coeficiente de la regresion
+def calculo_coeficiente(xi,yi):
+    coef = np.polyfit(xi,yi,3)
+    return coef
 x,y = api.datos2()
 
 x = x.strip('][').split(',')
