@@ -19,6 +19,7 @@ Seleccione para dirigirse
 
 Evaluaciones 📝  
 - [Interpolaciones](Proyectos/PrediccionMeteorologica/interpolaciones.ipynb)
+- [MontañaRusa](Proyectos/MontañaRusa)
 
 Asignaciones 📖
 - [Documentacion Julia](Asignaciones/asignacion-julia.ipynb)  
