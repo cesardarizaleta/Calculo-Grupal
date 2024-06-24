@@ -34,6 +34,8 @@ def grafica_regresion(muestra,eval,coef,xi,yi):
     plt.ylabel('px(xi)')
     plt.legend()
     plt.show()
+
+#API
 x,y = api.datos2()
 
 x = x.strip('][').split(',')
@@ -42,6 +44,11 @@ for i in range(len(x)): x[i] = float(x[i])
 y = y.strip('][').split(',')
 for i in range(len(x)): y[i] = float(y[i])
 
-#Imprimiendo datos a usar
-print(x)
-print(y)
+coef = calculo_coeficiente(x,y)
+eval = evaluacion_polinomio(coef,x)
+funcion = polinomio(coef)
+print("El polinomio de la regresion es: ", str(funcion))
+errorRegre = calculo_error(eval,y)
+print("El error de la regresion es: " , str(errorRegre))
+
+grafica_regresion(100,eval,coef,x,y)
