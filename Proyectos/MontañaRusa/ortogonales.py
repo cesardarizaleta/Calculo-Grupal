@@ -21,3 +21,20 @@ grado = 6
 A = np.zeros((len(x_data), grado + 1))
 for i in range(grado + 1):
     A[:, i] = np.array([legendre(i, x) for x in x_data])
+
+# Encontrar coeficientes que mejor se ajustan a los datos
+coeficientes = np.linalg.lstsq(A, y_data, rcond=None)[0]
+
+# Calcular valores para graficar la curva ajustada
+x_plot = np.linspace(x_data.min(), x_data.max(), 100)
+y_plot = np.zeros(len(x_plot))
+for i in range(grado + 1):
+    y_plot += coeficientes[i] * np.array([legendre(i, x) for x in x_plot])
+
+# Graficar
+plt.plot(x_plot, y_plot)
+plt.scatter(x_data, y_data)
+plt.xlabel('Eje x')
+plt.ylabel('Eje y')
+plt.title('Ajuste de Polinomio de Legendre')
+plt.show()
