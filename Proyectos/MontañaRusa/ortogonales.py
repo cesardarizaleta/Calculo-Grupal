@@ -15,7 +15,7 @@ x_data = np.array([0, 1, 2, 3, 4, 5])
 y_data = np.array([0.5, 0.8, 1.0, 0.9, 1.2, 0.7])
 
 # Grado del polinomio
-grado = 6
+grado = 7
 
 # Crear matriz de polinomios de Legendre
 A = np.zeros((len(x_data), grado + 1))
@@ -36,7 +36,7 @@ for i in range(grado + 1):
 # Graficar
 plt.plot(x_plot, y_plot)
 plt.scatter(x_data, y_data)
-plt.xlabel('Eje x')
-plt.ylabel('Eje y')
+plt.xlabel('X')
+plt.ylabel('Y')
 plt.title('Ajuste de Polinomio de Legendre')
 plt.show()

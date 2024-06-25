@@ -23,7 +23,7 @@ def calculo_error(eval,yi):
     return r23
 
 #Funcion que realiza la grafica de la regresion 
-def grafica_regresion(muestra,eval,coef,xi,yi):
+def grafica_regresion(eval,coef,xi,yi):
     x_valor = np.linspace(xi[0],xi[-1],100)
     y_valor = np.polyval(coef,x_valor)  
     plt.plot(xi,yi, "o", label="Puntos")
@@ -51,4 +51,4 @@ print("El polinomio de la regresion es: ", str(funcion))
 errorRegre = calculo_error(eval,y)
 print("El error de la regresion es: " , str(errorRegre))
 
-grafica_regresion(100,eval,coef,x,y)
+grafica_regresion(eval,coef,x,y)
