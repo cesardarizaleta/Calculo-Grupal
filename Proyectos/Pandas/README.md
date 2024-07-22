@@ -1,8 +1,8 @@
 # Evaluacion Utilizando Pandas
+
+<img width="100%" src="https://miro.medium.com/v2/resize:fit:2666/format:webp/1*OPxfz78JFpkDzC88Dax2RA.jpeg">
+
 ### Datos: Model.txt  
-
-<img width="100%" src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/10/Pandas-in-Python.jpg">
-
 Objetivos:  
 
 - Representar la matriz scatter de la velocidad y orientación del viento de los primeros mil registros.
