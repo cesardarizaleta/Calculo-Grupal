@@ -8,5 +8,8 @@ model = pd.read_csv("Proyectos/Pandas/model.txt", delim_whitespace=True, skiprow
 model['month'] = model.index.month
 model['year'] = model.index.year
 
-#Imprimiendo historico filtrado por años y meses
+#Imprimiendo tabla
 print(model.groupby(by = ['year', 'month']).mean().head(24))
+
+model.groupby(by=['year', 'month']).mean().plot(y='M(m/s)', figsize=(15, 5))
+plt.show()
