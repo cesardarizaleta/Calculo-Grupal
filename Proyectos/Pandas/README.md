@@ -1,7 +1,7 @@
 # Evaluacion Utilizando Pandas
 ### Datos: Model.txt  
 
-<img width="100%" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.makeuseof.com%2Fpandas-manipulate-dataframes%2F&psig=AOvVaw2-D0MzpWgtvSkXx8UrLFUG&ust=1721761464612000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOC_vLqru4cDFQAAAAAdAAAAABAI">
+<img width="100%" src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/10/Pandas-in-Python.jpg">
 
 Objetivos:  
 
